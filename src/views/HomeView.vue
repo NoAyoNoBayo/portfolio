@@ -27,7 +27,9 @@
             Contact me to discuss the ways<br>
             we can work together!<br>
           </div>
-          - Me
+          <div class="flex w-full justify-content-end">
+            - Me :)
+          </div>
         </div>
       </div>
     </div>

@@ -1,19 +1,26 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+var router = useRouter()
 var menubar_items = [
   {
     label: "Home",
+    command: () => { router.push("/") }
   },
   {
     label: "Contact",
+    command: () => { router.push("/contact") }
   },
   {
     label: "Tools",
+    command: () => { router.push("/tools") }
   },
   {
     label: "About",
+    command: () => { router.push("/about") }
   },
   {
     label: "Resume",
+    command: () => { router.push("/resume") }
   },
 ]
 </script>
