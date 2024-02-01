@@ -9,6 +9,12 @@ import router from './router'
 import PrimeVue from 'primevue/config'
 import Button from 'primevue/button'
 import Menubar from 'primevue/menubar'
+import InputText from 'primevue/inputtext'
+import Textarea from 'primevue/textarea'
+import Badge from 'primevue/badge'
+import Tag from 'primevue/tag'
+import DataView from 'primevue/dataview'
+import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
 
 const app = createApp(App)
 
@@ -17,5 +23,11 @@ app.use(PrimeVue)
 
 app.component('Button', Button)
 app.component('Menubar', Menubar)
+app.component('InputText', InputText)
+app.component('Textarea', Textarea)
+app.component('Badge', Badge)
+app.component('Tag', Tag)
+app.component('DataView', DataView)
+app.component('DataViewLayoutOptions', DataViewLayoutOptions)
 
 app.mount('#app')
