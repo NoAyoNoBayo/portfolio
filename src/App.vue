@@ -68,6 +68,8 @@ var menubar_items = [
   min-height: 3.7em;
   border-radius: 0px;
   font-family: Arvo;
+  background: var(--lighter_dark);
+  color: var(--light);
 }
 
 :deep .p-icon {

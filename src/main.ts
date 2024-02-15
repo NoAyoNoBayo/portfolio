@@ -14,6 +14,7 @@ import Textarea from 'primevue/textarea'
 import Badge from 'primevue/badge'
 import Tag from 'primevue/tag'
 import DataView from 'primevue/dataview'
+import Card from 'primevue/card'
 import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
 
 const app = createApp(App)
@@ -28,6 +29,7 @@ app.component('Textarea', Textarea)
 app.component('Badge', Badge)
 app.component('Tag', Tag)
 app.component('DataView', DataView)
+app.component('Card', Card)
 app.component('DataViewLayoutOptions', DataViewLayoutOptions)
 
 app.mount('#app')
