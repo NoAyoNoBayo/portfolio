@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-column gap-2 p-3 align-items-center w-full">
-    <div class="text-2xl" style="color: var(--light);">
+    <div class="text-4xl" style="color: var(--light);">
       My Resume
     </div>
-    <div class="text-sm" style="color: var(--neutral);">
+    <div class="text-xl" style="color: var(--neutral);">
       Read or download my resume.
     </div>
   </div>

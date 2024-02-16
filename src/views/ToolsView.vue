@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-column gap-2 p-3 align-items-center w-full">
-    <div class="text-2xl" style="color: var(--light);">
+    <div class="text-4xl" style="color: var(--light);">
       Tools I have developed
     </div>
-    <div class="text-sm" style="color: var(--neutral);">
+    <div class="text-xl" style="color: var(--neutral);">
       Feel free to use and send feedback
     </div>
     <div class="flex justify-content-center p-4 flex-wrap gap-3">

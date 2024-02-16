@@ -1,10 +1,10 @@
 
 <template>
   <div class="flex flex-column gap-2 p-3 align-items-center w-full">
-    <div class="text-2xl" style="color: var(--light);">
+    <div class="text-4xl" style="color: var(--light);">
       Contact me
     </div>
-    <div class="text-sm" style="color: var(--neutral);">
+    <div class="text-xl" style="color: var(--neutral);">
       Get in touch
     </div>
     <div class="form flex flex-column gap-3">

@@ -9,7 +9,7 @@
       </div>
       <div>
         <Button label="Return home" icon="pi pi-home" @click="$router.push('/')"
-          style="background: var(--light); color: var(--dark); font-family: Arvo;" />
+          style="background: var(--light); color: var(--lighter_dark); font-family: Arvo;" />
       </div>
     </div>
   </div>
