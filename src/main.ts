@@ -16,6 +16,9 @@ import Tag from 'primevue/tag'
 import DataView from 'primevue/dataview'
 import Card from 'primevue/card'
 import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
+import Carousel from 'primevue/carousel'
+import Image from 'primevue/image'
+
 
 const app = createApp(App)
 
@@ -31,5 +34,7 @@ app.component('Tag', Tag)
 app.component('DataView', DataView)
 app.component('Card', Card)
 app.component('DataViewLayoutOptions', DataViewLayoutOptions)
+app.component('Carousel', Carousel)
+app.component('Image', Image)
 
 app.mount('#app')

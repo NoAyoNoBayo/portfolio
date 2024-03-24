@@ -12,24 +12,27 @@
       <div class="text-4xl max-w-25rem" style="color: var(--light);">
         Hi! I am Dimitrios, nice to have you here!
       </div>
-      <div class="flex max-w-20rem" style="color: var(--neutral);">
+      <div class="flex max-w-20rem" style="color: var(--neutral);text-align: justify;">
         I am a full stack developer that loves designing, building and delivering software.
-        So I have decided to build this portfolio to develop and offer different tools for free!
+        I decided to build this portfolio to develop and offer different tools for free and to introduce myself
+        through my work!
         Hopefully this portfolio will continue to grow as I do! </div>
     </div>
-    <div class="flex flex-column align-items-center">
+    <div class="flex flex-column align-items-center justify-content-center w-full">
       <div class="flex align-items-center gap-3 text-3xl p-4" style="color: var(--light);">
         <div class="flex flex-column align-items-center">
-          <div class="flex flex-row align-items-center gap-3">
+          <div class="flex flex-row flex-wrap justify-content-center align-items-center gap-3">
             <i class="pi pi-code text-3xl" />
-            Technologies and Frameworks
+            <div class="text-center">
+              Technologies and Frameworks
+            </div>
           </div>
-          <div class="text-xl" style="color: var(--neutral);">
-            A list of development technologies I love to work with
+          <div class="text-xl text-center" style="color: var(--neutral);">
+            My favourite development technologies I have worked with
           </div>
         </div>
       </div>
-      <div class="flex flex-row flex-wrap gap-4 p-4" style="color: var(--light);">
+      <div class="flex flex-row flex-wrap gap-4 p-4 justify-content-center" style="color: var(--light);">
         <Card class="max-w-20rem">
           <template #title>
             <i class="pi pi-desktop text-lg" />
@@ -38,7 +41,7 @@
           <template #subtitle>
             <div class="flex">
               <div>
-                Frameworks that have enjoyed working with
+                Frameworks that made building UIs really easy and fun.
               </div>
             </div>
           </template>
@@ -67,7 +70,7 @@
           <template #subtitle>
             <div class="flex">
               <div>
-                Languages and Technologies that I have loved and made my life easier
+                Languages that I have loved and made my life easier (most of the times).
               </div>
             </div>
           </template>
@@ -78,6 +81,12 @@
                   <img src="/src/assets/golang.png" width="60" />
                   Go
                 </div>
+                <a href="https://python.org/">
+                  <div class="flex flex-row align-items-center text-2xl gap-3" style="color: var(--light);">
+                    <img src="/src/assets/python.png" width="60" />
+                    Python
+                  </div>
+                </a>
               </a>
             </div>
           </template>
@@ -113,9 +122,69 @@
         </Card>
       </div>
     </div>
+    <div class="flex flex-column w-full">
+      <div class="flex flex-row flex-wrap justify-content-center align-items-center gap-3">
+        <i class="pi pi-heart-fill text-3xl" />
+        <div class="text-3xl">
+          Things that made my development life easier
+        </div>
+      </div>
+      <div class="flex flex-row w-full justify-content-center">
+        <Carousel :value="frameworks" :numVisible="3" :numScroll="3"
+          style="width: 60vw; display: flex;align-items: center;">
+          <template #item="framework">
+            <a :href="framework.data.website">
+              <div class="flex flex-column border-1 surface-border justify-content-evenly border-round m-2 p-3"
+                style="background: #282936;">
+                <div class="mb-3">
+                  <div class="relative mx-auto">
+                    <img :src="'/src/assets/' + framework.data.imageURL" class="w-3 border-round" />
+                  </div>
+                </div>
+                <div class="mb-3 font-medium text-lg" style="color: var(--light);">{{ framework.data.label }}</div>
+                <div class="flex justify-content-between align-items-center">
+                  <div class="mt-0 font-semibold text-xl" style="color: var(--light);">{{ framework.data.description
+                    }}</div>
+                </div>
+              </div>
+            </a>
+          </template>
+        </Carousel>
+      </div>
+    </div>
   </div>
 </template>
 
+<script setup lang="ts">
+import { ref } from 'vue'
+const frameworks = ref([
+  {
+    label: 'Docker',
+    imageURL: 'docker.png',
+    description: 'Build run and share applications',
+    website: "https://docker.com"
+  },
+  {
+    label: 'RabbitMQ',
+    imageURL: 'rabbitmq.png',
+    description: 'Reliable and mature messaging broker',
+    website: "https://rabbitmq.com"
+  },
+  {
+    label: 'AstroNvim',
+    imageURL: 'astronvim.png',
+    description: 'Beautiful NeoVim configuration',
+    website: "https://astronvim.com"
+  },
+  {
+    label: 'DBeaver',
+    imageURL: 'dbeaver.png',
+    description: 'Universal database tool',
+    website: "https://dbeaver.io"
+  },
+])
+
+</script>
 
 <style scoped>
 :deep(.p-card-body) {

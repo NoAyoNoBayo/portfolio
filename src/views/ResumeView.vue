@@ -6,7 +6,21 @@
     <div class="text-xl" style="color: var(--neutral);">
       Read or download my resume.
     </div>
+    <div>
+      <Image src="/src/assets/ResumePhoto.png" alt="Image" width="250" preview />
+    </div>
+    <a href="/src/assets/kapouranis-dimitrios.pdf">
+      <Button label="Download" icon="pi pi-download" style="color: var(--light); background: var(--dark);" />
+    </a>
   </div>
 </template>
-<script setup lang="ts"></script>
-<style></style>
+<style scoped>
+:deep(.pi) {
+  padding: 3px;
+}
+</style>
+
+<script setup>
+import pdf from "/src/assets/kapouranis-dimitrios.pdf";
+
+</script>
