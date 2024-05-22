@@ -16,14 +16,18 @@ import Tag from 'primevue/tag'
 import DataView from 'primevue/dataview'
 import Card from 'primevue/card'
 import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
-import Carousel from 'primevue/carousel'
 import Image from 'primevue/image'
+import { Carousel, Slide, Navigation } from 'vue3-carousel'
+import ToastService from 'primevue/toastservice'
+import Toast from 'primevue/toast'
 
 
 const app = createApp(App)
 
 app.use(router)
 app.use(PrimeVue)
+app.use(ToastService)
+
 
 app.component('Button', Button)
 app.component('Menubar', Menubar)
@@ -34,7 +38,10 @@ app.component('Tag', Tag)
 app.component('DataView', DataView)
 app.component('Card', Card)
 app.component('DataViewLayoutOptions', DataViewLayoutOptions)
-app.component('Carousel', Carousel)
 app.component('Image', Image)
+app.component('Carousel', Carousel)
+app.component('Slide', Slide)
+app.component('Navigation', Navigation)
+app.component('Toast', Toast)
 
 app.mount('#app')

@@ -14,9 +14,9 @@
       </div>
       <div class="flex max-w-20rem" style="color: var(--neutral);text-align: justify;">
         I am a full stack developer that loves designing, building and delivering software.
-        I decided to build this portfolio to develop and offer different tools for free and to introduce myself
+        I decided to build this personal website to introduce myself
         through my work!
-        Hopefully this portfolio will continue to grow as I do! </div>
+        Hopefully this website will continue to grow as I do! </div>
     </div>
     <div class="flex flex-column align-items-center justify-content-center w-full">
       <div class="flex align-items-center gap-3 text-3xl p-4" style="color: var(--light);">
@@ -125,28 +125,37 @@
     <div class="flex flex-column w-full">
       <div class="flex flex-row flex-wrap justify-content-center align-items-center gap-3">
         <div class="text-3xl">
-          <i class="pi pi-heart-fill text-3xl" />
-          Things that made my development life easier
+          <i class="pi pi-heart-fill text-3xl mr-2" />
+          I also loved working with:
         </div>
       </div>
-      <div class="flex flex-row w-full justify-content-center">
-        <div class="flex flex-row flex-wrap gap-2 w-8 h-full">
-          <div v-for="framework in frameworks" :key=framework.label>
-            <a :href="framework.website">
-              <div
-                class="flex flex-column border-1 surface-border justify-content-evenly border-round h-full w-full p-2 m-2"
-                style="background: #282936;">
-                <div class="flex flex-row align-items-center gap-2">
-                  <img class="w-3" :src="'/src/assets/' + framework.imageURL" />
-                  <div class="text-lg" style="color: var(--light);font-family: Arvo !important;">
-                    {{ framework.label }}
-                  </div>
-                </div>
-                <div style="color: var(--light);">
-                  {{ framework.description }}
-                </div>
-              </div>
-            </a>
+    </div>
+    <div class="flex flex-row justify-content-center">
+      <Carousel :items-to-show="2" :wrap-around="true" style="width: 40rem;">
+        <Slide v-for="(framework, index) of frameworks" :key=framework.label>
+          <div class="carousel__item">
+            <div class="flex flex-column align-items-center cursor-pointer"
+              @click="window.open(framework.website, '_blank');">
+              <img :src="'/src/assets/' + framework.imageURL" width="50%" />
+              {{ framework.label }}
+            </div>
+          </div>
+        </Slide>
+        <template #addons>
+          <Navigation />
+        </template>
+      </Carousel>
+    </div>
+    <div class="flex flex-column w-full p-4">
+      <div class="flex flex-row flex-wrap justify-content-center align-items-center gap-3">
+        <div class="flex flex-column gap-2">
+          <div class="text-3xl">
+            <i class="pi pi-lightbulb text-3xl mr-2" />
+            If you want to know more:
+          </div>
+          <div class="flex w-full justify-content-center">
+            <Button label="Get in touch" icon="pi pi-send" @click="$router.push('/contact');
+            " style="background: var(--lighter_dark);color: var(--light);font: bold;border-color: var(--dark);" />
           </div>
         </div>
       </div>
@@ -156,6 +165,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import 'vue3-carousel/dist/carousel.css'
+
 const frameworks = ref([
   {
     label: 'Docker',
@@ -188,5 +199,14 @@ const frameworks = ref([
 <style scoped>
 :deep(.p-card-body) {
   border-color: var(--neutral);
+}
+
+:deep(.carousel__icon) {
+  fill: var(--light) !important;
+}
+
+:deep(.pi) {
+  color: var(--neutral);
+  padding: 5px;
 }
 </style>

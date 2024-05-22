@@ -16,15 +16,15 @@
       <div class="flex justify-content-center pt-5">
         <div class="bio flex flex-column w-8 gap-3 lg:text-lg fadein animation-duration-1000">
           <div class="p-1 text-xl">
-            Hello! Welcome to my portfolio.<br>
-            I am a full stack developer based in Greece.<br>
+            Hello, Welcome!<br>
+            I am a software developer based in Greece.<br>
           </div>
           <div class="p-1 text-xl">
-            Check the tools tab, you may find something usefull
+            This is my personal website aimed to introduce myself briefly.
             <i class="pi pi-heart" />
           </div>
           <div class="p-1 text-xl">
-            Contact me to discuss the ways<br>
+            Take a look around and contact me to discuss the ways
             we can work together!<br>
           </div>
           <div class="flex w-full justify-content-end text-sm">
