@@ -124,32 +124,31 @@
     </div>
     <div class="flex flex-column w-full">
       <div class="flex flex-row flex-wrap justify-content-center align-items-center gap-3">
-        <i class="pi pi-heart-fill text-3xl" />
         <div class="text-3xl">
+          <i class="pi pi-heart-fill text-3xl" />
           Things that made my development life easier
         </div>
       </div>
       <div class="flex flex-row w-full justify-content-center">
-        <Carousel :value="frameworks" :numVisible="3" :numScroll="3"
-          style="width: 60vw; display: flex;align-items: center;">
-          <template #item="framework">
-            <a :href="framework.data.website">
-              <div class="flex flex-column border-1 surface-border justify-content-evenly border-round m-2 p-3"
+        <div class="flex flex-row flex-wrap gap-2 w-8 h-full">
+          <div v-for="framework in frameworks" :key=framework.label>
+            <a :href="framework.website">
+              <div
+                class="flex flex-column border-1 surface-border justify-content-evenly border-round h-full w-full p-2 m-2"
                 style="background: #282936;">
-                <div class="mb-3">
-                  <div class="relative mx-auto">
-                    <img :src="'/src/assets/' + framework.data.imageURL" class="w-3 border-round" />
+                <div class="flex flex-row align-items-center gap-2">
+                  <img class="w-3" :src="'/src/assets/' + framework.imageURL" />
+                  <div class="text-lg" style="color: var(--light);font-family: Arvo !important;">
+                    {{ framework.label }}
                   </div>
                 </div>
-                <div class="mb-3 font-medium text-lg" style="color: var(--light);">{{ framework.data.label }}</div>
-                <div class="flex justify-content-between align-items-center">
-                  <div class="mt-0 font-semibold text-xl" style="color: var(--light);">{{ framework.data.description
-                    }}</div>
+                <div style="color: var(--light);">
+                  {{ framework.description }}
                 </div>
               </div>
             </a>
-          </template>
-        </Carousel>
+          </div>
+        </div>
       </div>
     </div>
   </div>
