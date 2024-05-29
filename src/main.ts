@@ -20,6 +20,7 @@ import Image from 'primevue/image'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import ToastService from 'primevue/toastservice'
 import Toast from 'primevue/toast'
+import InlineMessage from 'primevue/inlinemessage'
 
 
 const app = createApp(App)
@@ -43,5 +44,6 @@ app.component('Carousel', Carousel)
 app.component('Slide', Slide)
 app.component('Navigation', Navigation)
 app.component('Toast', Toast)
+app.component('InlineMessage', InlineMessage)
 
 app.mount('#app')

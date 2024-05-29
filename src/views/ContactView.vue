@@ -1,28 +1,57 @@
 <template>
-  <Toast />
-  <div class="flex flex-column gap-2 p-3 align-items-center w-full">
+  <div class="flex flex-column gap-2 p-3 align-items-center">
     <div class="text-4xl" style="color: var(--light);">
       Contact me
     </div>
-    <div class="text-xl" style="color: var(--neutral);">
+    <div class="text-xl" style="color: var(--light);">
       Get in touch
     </div>
-    <div class="form flex flex-column gap-3">
-      <div class="flex gap-3 flex-column">
-        <InputText placeholder="First Name" v-model="email.firstName" />
-        <InputText placeholder="Last Name" v-model="email.lastName" />
-        <InputText placeholder="Email Address" v-model="email.emailAddress" />
+    <form class="flex flex-column" @submit.prevent="sendMail">
+      <div class="form flex flex-column gap-3">
+        <div class="flex gap-3 flex-column">
+          <div class="flex flex-column">
+            <InputText placeholder="First Name" type="text" v-model="email.firstName" />
+            <small class="m-0 p-0" v-for="error in v$.firstName.$errors" :key="error.uid" style="color: red;"> Required
+            </small>
+          </div>
+          <div class="flex flex-column">
+            <InputText placeholder="Last Name" type="text" v-model="email.lastName" />
+            <small v-for="error in v$.lastName.$errors" :key="error.uid" style="color: red;">Required</small>
+          </div>
+          <div class="flex flex-column">
+            <InputText placeholder="Email Address" type="email" v-model="email.emailAddress" />
+            <small v-for="error in v$.emailAddress.$errors" :key="error.uid" style="color: red;">Required</small>
+          </div>
+        </div>
+        <div class="flex flex-column">
+          <InputText placeholder="Subject" type="text" v-model="email.subject" />
+          <small v-for="error in v$.subject.$errors" :key="error.uid" style="color: red;">Required</small>
+        </div>
+        <div class="flex flex-column">
+          <Textarea placeholder="Message" type="text" maxlength="150" rows="5" cols="30" style="resize: none;"
+            v-model="email.body" />
+          <small v-for="error in v$.body.$errors" :key="error.uid" style="color: red;"> Required </small>
+        </div>
+        <Button label="Send" type="submit" icon="pi pi-send"
+          style="background: var(--lighter_dark); color: var(--light);border-color: var(--dark);" />
       </div>
-      <InputText placeholder="Subject" v-model="email.subject" />
-      <Textarea placeholder="Message" maxlength="150" rows="5" cols="30" style="resize: none;" v-model="email.body" />
-    </div>
-    <Button label="Send" icon="pi pi-send" @click="sendMail()"
-      style="background: var(--lighter_dark); color: var(--neutral);border-color: var(--dark);" />
+    </form>
+
   </div>
 </template>
 <script setup lang="ts">
-import { useToast } from 'primevue/usetoast';
-const toast = useToast()
+import useVuelidate from '@vuelidate/core'
+import { required } from '@vuelidate/validators'
+
+const rules = {
+  subject: { required },
+  body: { required },
+  firstName: { required },
+  lastName: { required },
+  emailAddress: { required },
+}
+
+
 var email = {
   subject: '',
   body: '',
@@ -31,28 +60,23 @@ var email = {
   emailAddress: ''
 }
 
-let sendMail = () => {
-  if (!email.firstName) {
-    toast.add({ severity: 'error', summary: 'Message is empty', detail: 'Please write a short message.', life: 3000 });
-  }
-  else if (!email.lastName) {
-    toast.add({ severity: 'error', summary: 'First name is empty', detail: 'Please write your first name.', life: 3000 });
-  }
-  else if (!email.emailAddress) {
-    toast.add({ severity: 'error', summary: 'Last name is empty', detail: 'Please write your last name.', life: 3000 });
-  }
-  else if (!email.subject) {
-    toast.add({ severity: 'error', summary: 'Subject is empty', detail: 'Please write a short subject.', life: 3000 });
-  } else if (!email.body) {
-    toast.add({ severity: 'error', summary: 'Email is empty', detail: 'Please write your email.', life: 3000 });
+const v$ = useVuelidate(rules, email)
+
+const sendMail = async () => {
+  const valid = await v$.value.$validate();
+  if (valid) {
+
+    alert("Success, Mail sent!")
   } else {
-    console.log(email)
+
+    alert("Failed, Mail not sent!")
   }
 }
+
 </script>
 <style scoped>
 :deep(.pi) {
-  color: var(--neutral);
+  color: var(--light);
   padding: 5px;
 }
 </style>

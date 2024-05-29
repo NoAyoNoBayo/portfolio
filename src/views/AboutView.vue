@@ -132,12 +132,14 @@
     </div>
     <div class="flex flex-row justify-content-center">
       <Carousel :items-to-show="2" :wrap-around="true" style="width: 40rem;">
-        <Slide v-for="(framework, index) of frameworks" :key=framework.label>
+        <Slide v-for="(framework ) of frameworks" :key=framework.label>
           <div class="carousel__item">
-            <div class="flex flex-column align-items-center cursor-pointer"
-              @click="window.open(framework.website, '_blank');">
-              <img :src="'/src/assets/' + framework.imageURL" width="50%" />
-              {{ framework.label }}
+            <div class="flex flex-column align-items-center justify-content-center cursor-pointer">
+              <a :href="framework.website" class="flex h-full flex-column align-items-center justify-content-between"
+                style="color: var(--light);transition: none;padding: 0px; ">
+                <img :src="'/src/assets/' + framework.imageURL" width="50%" />
+                {{ framework.label }}
+              </a>
             </div>
           </div>
         </Slide>
@@ -206,7 +208,7 @@ const frameworks = ref([
 }
 
 :deep(.pi) {
-  color: var(--neutral);
+  color: var(--light);
   padding: 5px;
 }
 </style>
