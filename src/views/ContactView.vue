@@ -11,7 +11,8 @@
         <div class="flex gap-3 flex-column">
           <div class="flex flex-column">
             <InputText placeholder="First Name" type="text" v-model="email.firstName" />
-            <small class="m-0 p-0" v-for="error in v$.firstName.$errors" :key="error.uid" style="color: red;"> Required
+            <small class="m-0 p-0" v-for="error in v$.firstName.$errors" :key="error.uid" style="color: red;">
+              Required
             </small>
           </div>
           <div class="flex flex-column">
@@ -42,6 +43,8 @@
 <script setup lang="ts">
 import useVuelidate from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
+import { ref } from 'vue'
+
 
 const rules = {
   subject: { required },
@@ -52,13 +55,13 @@ const rules = {
 }
 
 
-var email = {
+const email = ref({
   subject: '',
   body: '',
   firstName: '',
   lastName: '',
   emailAddress: ''
-}
+})
 
 const v$ = useVuelidate(rules, email)
 
@@ -67,9 +70,6 @@ const sendMail = async () => {
   if (valid) {
 
     alert("Success, Mail sent!")
-  } else {
-
-    alert("Failed, Mail not sent!")
   }
 }
 
