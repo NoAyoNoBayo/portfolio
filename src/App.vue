@@ -13,11 +13,6 @@ var menubar_items = [
     icon: "pi pi-info-circle"
   },
   {
-    label: "Contact",
-    command: () => { router.push("/contact") },
-    icon: "pi pi-link"
-  },
-  {
     label: "Resume",
     command: () => { router.push("/resume") },
     icon: "pi pi-file"
