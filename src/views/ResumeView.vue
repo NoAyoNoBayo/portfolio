@@ -21,6 +21,4 @@
 </style>
 
 <script setup lang="ts">
-import pdf from "/src/assets/kapouranis-dimitrios.pdf";
-
 </script>
