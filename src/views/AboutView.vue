@@ -143,7 +143,7 @@
             </div>
           </div>
         </Slide>
-        <template #addons>
+        <template>
           <Navigation />
         </template>
       </Carousel>
