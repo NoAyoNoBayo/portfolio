@@ -130,23 +130,20 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-row justify-content-center">
-      <Carousel :items-to-show="2" :wrap-around="true" style="width: 40rem;">
-        <Slide v-for="(framework ) of frameworks" :key=framework.label>
-          <div class="carousel__item">
-            <div class="flex flex-column align-items-center justify-content-center cursor-pointer">
-              <a :href="framework.website" class="flex h-full flex-column align-items-center justify-content-between"
-                style="color: var(--light);transition: none;padding: 0px; ">
-                <img :src="'/src/assets/' + framework.imageURL" width="50%" />
-                {{ framework.label }}
-              </a>
+    <div class="flex flex-row w-full justify-content-center align-items-center">
+      <div class="grid gap-3 p-4">
+        <div class="col justify-content-center" v-for="framework in frameworks">
+          <div class="flex flex-column justify-content-center align-items-center">
+            <img :src="'src/assets/' + framework.imageURL" width="60rem" />
+            <div class="text-xl" style="font-family: var(--font-family);">
+              {{ framework.label }}
+            </div>
+            <div class="text-sm text-center" style="font-family: var(--font-family);">
+              {{ framework.description }}
             </div>
           </div>
-        </Slide>
-        <template>
-          <Navigation />
-        </template>
-      </Carousel>
+        </div>
+      </div>
     </div>
     <div class="flex flex-column w-full p-4">
       <div class="flex flex-row flex-wrap justify-content-center align-items-center gap-3">
@@ -156,8 +153,10 @@
             If you want to know more:
           </div>
           <div class="flex w-full justify-content-center">
-            <Button label="Get in touch" icon="pi pi-send" @click="$router.push('/contact');
-            " style="background: var(--lighter_dark);color: var(--light);font: bold;border-color: var(--dark);" />
+            <a href="mailto:dimitrioskapouranis@gmail.com">
+              <Button label="Get in touch" icon="pi pi-send"
+                style="background: var(--lighter_dark);color: var(--light);font: bold;border-color: var(--dark);" />
+            </a>
           </div>
         </div>
       </div>

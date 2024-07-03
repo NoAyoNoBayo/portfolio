@@ -50,7 +50,9 @@ var menubar_items = [
       </div>
     </template>
   </Menubar>
-  <RouterView />
+  <span>
+    <RouterView />
+  </span>
 </template>
 
 <style scoped>
