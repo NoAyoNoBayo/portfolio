@@ -107,7 +107,7 @@
             <div class="flex flex-column gap-5 p-3">
               <a href="https://postgresql.org/">
                 <div class="flex flex-row align-items-center text-2xl gap-3" style="color: var(--light);">
-                  <img src="/src/assets/postgres.png" width="60" />
+                  <img src="@/assets/postgres.png" width="60" />
                   PostgreSQL
                 </div>
               </a>
