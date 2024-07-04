@@ -9,6 +9,8 @@ lerna-debug.log*
 
 node_modules
 .DS_Store
+.eslintrc.cjs
+.prettierrc.json
 coverage
 *.local
 
@@ -24,5 +26,6 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
 
 *.tsbuildinfo
