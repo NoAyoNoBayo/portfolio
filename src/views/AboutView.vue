@@ -12,7 +12,8 @@
       <div class="text-4xl max-w-25rem" style="color: var(--light);">
         Hi! I am Dimitrios, nice to have you here!
       </div>
-      <div class="flex max-w-20rem" style="color: var(--neutral);text-align: justify;">
+      <div class="flex max-w-20rem fadeinright animation-duration-1000"
+        style="color: var(--neutral);text-align: justify;">
         I am a full stack developer that loves designing, building and delivering software.
         I decided to build this personal website to introduce myself
         through my work!

@@ -8,7 +8,7 @@
         Kapouranis Dimitrios
       </div>
       <div class="text-xl" style="color: var(--neutral);">
-        Full Stack Developer
+        Software Engineer
       </div>
       <div class="flex justify-content-center">
         <img src="@/assets/avatar.png" width="150" />
