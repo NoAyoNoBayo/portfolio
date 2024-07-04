@@ -134,7 +134,7 @@
       <div class="grid gap-3 p-4">
         <div class="col justify-content-center" v-for="framework in frameworks">
           <div class="flex flex-column justify-content-center align-items-center">
-            <img :src="'src/assets/' + framework.imageURL" width="60rem" />
+            <img :src="'/src/assets/' + framework.imageURL" width="60rem" />
             <div class="text-xl" style="font-family: var(--font-family);">
               {{ framework.label }}
             </div>
