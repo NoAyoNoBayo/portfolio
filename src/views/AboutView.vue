@@ -171,25 +171,25 @@ import 'vue3-carousel/dist/carousel.css'
 const frameworks = ref([
   {
     label: 'Docker',
-    imageURL: '/docker.png',
+    imageURL: 'docker.png',
     description: 'Build run and share applications',
     website: "https://docker.com"
   },
   {
     label: 'RabbitMQ',
-    imageURL: '/rabbitmq.png',
+    imageURL: 'rabbitmq.png',
     description: 'Reliable and mature messaging broker',
     website: "https://rabbitmq.com"
   },
   {
     label: 'AstroNvim',
-    imageURL: '/astronvim.png',
+    imageURL: 'astronvim.png',
     description: 'Beautiful NeoVim configuration',
     website: "https://astronvim.com"
   },
   {
     label: 'DBeaver',
-    imageURL: '/dbeaver.png',
+    imageURL: 'dbeaver.png',
     description: 'Universal database tool',
     website: "https://dbeaver.io"
   },
