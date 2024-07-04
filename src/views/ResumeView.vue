@@ -7,9 +7,9 @@
       Read or download my resume.
     </div>
     <div>
-      <Image src="src/assets/ResumePhoto.png" alt="Image" width="250" preview />
+      <Image src="src/assets/public/cv/ResumePhoto.png" alt="Image" width="250" preview />
     </div>
-    <a href="src/assets/kapouranis-dimitrios.pdf">
+    <a href="src/assets/public/cv/kapouranis-dimitrios.pdf">
       <Button label="Download" icon="pi pi-download" style="color: var(--light); background: var(--dark);" />
     </a>
   </div>
