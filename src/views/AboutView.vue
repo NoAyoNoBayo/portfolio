@@ -130,7 +130,7 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-row w-full justify-content-center align-items-center">
+    <div class="flex flex-row justify-content-center align-items-center">
       <div class="grid gap-3 p-4">
         <div class="col justify-content-center" v-for="framework in frameworks">
           <div class="flex flex-column justify-content-center align-items-center">
@@ -171,25 +171,25 @@ import 'vue3-carousel/dist/carousel.css'
 const frameworks = ref([
   {
     label: 'Docker',
-    imageURL: '@/assets/docker.png',
+    imageURL: 'src/assets/docker.png',
     description: 'Build run and share applications',
     website: "https://docker.com"
   },
   {
     label: 'RabbitMQ',
-    imageURL: '@/assets/rabbitmq.png',
+    imageURL: 'src/assets/rabbitmq.png',
     description: 'Reliable and mature messaging broker',
     website: "https://rabbitmq.com"
   },
   {
     label: 'AstroNvim',
-    imageURL: '@/assets/astronvim.png',
+    imageURL: 'src/assets/astronvim.png',
     description: 'Beautiful NeoVim configuration',
     website: "https://astronvim.com"
   },
   {
     label: 'DBeaver',
-    imageURL: '@/assets/dbeaver.png',
+    imageURL: 'src/assets/dbeaver.png',
     description: 'Universal database tool',
     website: "https://dbeaver.io"
   },
