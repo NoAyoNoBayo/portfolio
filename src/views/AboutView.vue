@@ -171,7 +171,7 @@ import 'vue3-carousel/dist/carousel.css'
 const frameworks = ref([
   {
     label: 'Docker',
-    imageURL: '/src/public/docker.png',
+    imageURL: '/assets/public/docker.png',
     description: 'Build run and share applications',
     website: "https://docker.com"
   },
